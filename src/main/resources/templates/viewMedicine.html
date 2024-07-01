@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Medicines</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://t4.ftcdn.net/jpg/07/92/02/57/240_F_792025713_paKf9PpVml3iHHd6vvucpwE2s4V9K6yg.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            color: #343a40;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #fff;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .edit-button {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 4px 2px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .edit-button:hover {
+            background-color: #007bff;
+        }
+        .edit-button:active {
+            background-color: #007bff;
+            transform: translateY(2px);
+        }
+        .back-to-home {
+            display: inline-block;
+            padding: 12px 20px;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            text-align: center;
+        }
+        .back-to-home:hover {
+            background-color: #0056b3;
+        }
+        .back-to-home:active {
+            background-color: #0056b3;
+            transform: translateY(2px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 15px;
+            }
+            table, th, td {
+                font-size: 14px;
+            }
+            th, td {
+                padding: 10px;
+            }
+            .edit-button {
+                padding: 6px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            table, th, td {
+                font-size: 12px;
+            }
+            th, td {
+                padding: 8px;
+            }
+            .edit-button {
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Medicine List</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Serial No</th>
+            <th>Medicine Name</th>
+            <th>Dosage</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="medicine : ${medicine}">
+            <td th:text="${medicine.serialNo}"></td>
+            <td th:text="${medicine.medicineName}"></td>
+            <td th:text="${medicine.dosage}"></td>
+            <td th:text="${medicine.quantity}"></td>
+            <td>
+                <a th:href="@{/medicineUpdateById(serialNo=${medicine.serialNo})}" class="edit-button">Edit</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="/home" class="back-to-home">Back to Home</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-image: url('https://t4.ftcdn.net/jpg/07/92/02/57/240_F_792025713_paKf9PpVml3iHHd6vvucpwE2s4V9K6yg.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly increased transparency */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            backdrop-filter: blur(5px); /* Adding blur effect for a frosted glass effect */
+        }
+
+        h2 {
+            color: #2980b9;
+            margin-bottom: 20px;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        p {
+            color: #7f8c8d;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column; /* Set flex direction to column */
+            align-items: center; /* Center the items horizontally */
+        }
+
+        nav ul li {
+            margin: 10px 0; /* Adjust margin for vertical spacing */
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            padding: 12px 24px;
+            background-color: #2980b9;
+            border-radius: 6px;
+            transition: background-color 0.3s, transform 0.3s;
+            display: block;
+            text-align: center;
+            width: 200px; /* Optional: set a fixed width */
+        }
+
+        nav ul li a:hover {
+            background-color: #1c5986;
+            transform: scale(1.05);
+        }
+
+        .logout {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            padding: 12px 24px;
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .logout:hover {
+            background-color: #c0392b;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            nav ul li a {
+                font-size: 16px;
+                padding: 10px 20px;
+                width: 100%; /* Full width on small screens */
+            }
+
+            .logout {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Welcome to the VAIRAM HOSPITAL ZONE</h2>
+    <nav>
+        <ul>
+            <li><a href="/displayDoctors">View Doctors</a></li>
+            <li><a href="/displayAppointments">View Appointments</a></li>
+            <li><a href="/displayMedicine">View Medicines</a></li>
+            <li><a href="/addMedicine">Add Medicines</a></li>
+        </ul>
+    </nav>
+    <a href="/logout" class="logout">Logout</a>
+</div>
+</body>
+</html>

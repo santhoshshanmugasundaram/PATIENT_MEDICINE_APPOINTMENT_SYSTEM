@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://t4.ftcdn.net/jpg/07/92/02/57/240_F_792025713_paKf9PpVml3iHHd6vvucpwE2s4V9K6yg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            text-align: center;
+        }
+        .content {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 36px;
+            color: #ffcccb;
+        }
+        p {
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2980b9;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        a:hover {
+            background-color: #1c5986;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <h1>Error</h1>
+    <p th:text="${error}">An error occurred.</p>
+    <a href="/displayMedicine">Go back to the medicine list</a>
+</div>
+</body>
+</html>
