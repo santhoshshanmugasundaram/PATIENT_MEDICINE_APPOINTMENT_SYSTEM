@@ -96,8 +96,7 @@ INSERT INTO doctor (name, specialization, available_slots) VALUES
 ('Dr. John Doe', 'Cardiology', 10),
 ('Dr. Jane Smith', 'Neurology', 8);
 
-Frontend
-View the frontend, using this Drive link.
+View the frontend, using this Drive link. View the frontend, using this Drive link https://drive.google.com/file/d/1WR26g7oDu9vH4PSpSBv4COJHWlhPSoTR/view?usp=drive_link
 
 
 ***Thank you***
